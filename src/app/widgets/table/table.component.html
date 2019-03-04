@@ -1,0 +1,13 @@
+<table>
+  <tbody>
+    <tr
+      *ngFor="let tableRow of tableData"
+      [style.background-color]="tableRow.rowColor"
+      (click)="emitId(tableRow.link)"
+    >
+      <td *ngFor="let column of tableRow.columns">
+        {{ column }}
+      </td>
+    </tr>
+  </tbody>
+</table>

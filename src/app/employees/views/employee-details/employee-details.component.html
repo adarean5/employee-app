@@ -1,0 +1,10 @@
+<app-employee-form
+  [formDisabled]="formDisabled"
+  [employeeModel]="employee"
+  (submitEmitter)="updateEmployee($event)"
+></app-employee-form>
+
+<div *ngIf="formDisabled">
+  <button (click)="deleteEmployee()">Delete</button>
+  <button (click)="toggleEditing()">Edit</button>
+</div>

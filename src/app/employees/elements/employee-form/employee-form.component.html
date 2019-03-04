@@ -1,0 +1,19 @@
+<div>
+  <form [formGroup]="employeeForm" (ngSubmit)="editEmployee()">
+    <input type="text" formControlName="firstName" placeholder="First Name" />
+    <br />
+    <input type="text" formControlName="lastName" placeholder="First Name" />
+    <br />
+    <select formControlName="gender">
+      <option value="1">Male</option>
+      <option value="0">Female</option>
+    </select>
+    <br />
+    <input
+      type="submit"
+      value="Submit"
+      [disabled]="employeeForm.invalid"
+      *ngIf="!formDisabled"
+    />
+  </form>
+</div>
