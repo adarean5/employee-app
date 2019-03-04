@@ -1,8 +1,8 @@
-<nav>
-  <div>
-    <p *ngIf="userName != ''">Welcome {{ userName }}</p>
+<mat-toolbar>
+  <span>Employee management system {{ currentDate | date }}</span>
+  <div *ngIf="userName != ''">
+    <span>Welcome {{ userName }}</span>
     <button mat-button (click)="logOut()">Log out</button>
   </div>
-  <p>Employee management system {{ currentDate | date }}</p>
-</nav>
+</mat-toolbar>
 <router-outlet></router-outlet>

@@ -15,6 +15,7 @@ const RECENT_ROW_COLOR = '#80cbc4';
   providers: [DatePipe, GenderPipePipe]
 })
 export class EmployeesOverviewComponent implements OnInit {
+  public tableHeaders = ['First name', 'Last name', 'Gender', 'Insertion date'];
   public tableData: TableRow[];
 
   constructor(

@@ -1,6 +1,11 @@
-<table>
+<table mat-table>
   <tbody>
-    <tr
+    <mat-header-row>
+      <th *ngFor="let tableHeader of tableHeaders">{{ tableHeader }}</th>
+    </mat-header-row>
+
+    <mat-row
+      mat-row
       *ngFor="let tableRow of tableData"
       [style.background-color]="tableRow.rowColor"
       (click)="emitId(tableRow.link)"
@@ -8,6 +13,6 @@
       <td *ngFor="let column of tableRow.columns">
         {{ column }}
       </td>
-    </tr>
+    </mat-row>
   </tbody>
 </table>

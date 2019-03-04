@@ -1,10 +1,24 @@
-<div>
+<div id="login-form-container">
   <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
-    <input type="text" formControlName="userName" />
-    <br />
-    <input type="password" formControlName="password" />
-    <br />
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="userName"
+        placeholder="Username"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+    </mat-form-field>
     <p *ngIf="loginErrorMessage != ''">{{ loginErrorMessage }}</p>
-    <button type="submit" [disabled]="loginForm.invalid">Log in</button>
+    <button mat-button type="submit" [disabled]="loginForm.invalid">
+      Log in
+    </button>
   </form>
 </div>

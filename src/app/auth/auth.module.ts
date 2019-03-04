@@ -11,6 +11,7 @@ import { authReducers } from './store/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { LoginFormComponent } from './elements/login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [LoginComponent, LoginFormComponent],
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     RouterModule.forChild(ROUTES),
     StoreModule.forFeature('auth', authReducers),
-    EffectsModule.forFeature([AuthEffects])
+    EffectsModule.forFeature([AuthEffects]),
+    MaterialModule
   ],
   providers: [AuthService]
 })

@@ -9,6 +9,9 @@ import { TableRow } from './table.model';
 })
 export class TableComponent implements OnInit {
   @Input()
+  tableHeaders: string[];
+
+  @Input()
   tableData: TableRow[];
 
   @Output()

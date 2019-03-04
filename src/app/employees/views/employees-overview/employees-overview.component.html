@@ -1,6 +1,7 @@
 <div>
   <button mat-button (click)="addEmployee()">Add employee</button>
   <app-table
+    [tableHeaders]="tableHeaders"
     [tableData]="tableData"
     (idEmitter)="displayEmployeeDetails($event)"
   ></app-table>
