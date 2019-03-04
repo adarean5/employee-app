@@ -1,5 +1,7 @@
 <div>
-  <button mat-button (click)="addEmployee()">Add employee</button>
+  <button mat-raised-button color="primary" (click)="addEmployee()">
+    Add employee
+  </button>
   <app-table
     [tableHeaders]="tableHeaders"
     [tableData]="tableData"

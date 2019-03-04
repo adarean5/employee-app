@@ -4,4 +4,5 @@ export class Employee {
   lastName: string;
   gender: number;
   insertionDate: Date;
+  role: string;
 }

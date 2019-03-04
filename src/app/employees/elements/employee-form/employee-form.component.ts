@@ -13,7 +13,8 @@ export class EmployeeFormComponent implements OnInit {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     gender: new FormControl(''),
-    insertionDate: new FormControl('')
+    insertionDate: new FormControl(''),
+    role: new FormControl('')
   });
 
   private _formDisabled = false;

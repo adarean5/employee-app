@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.new-row {
+  background: #69f0ae;
+}
+
+.new-row > td {
+  color: #7b1fa2;
+}

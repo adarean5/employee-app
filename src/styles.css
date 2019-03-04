@@ -1,1 +1,26 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@angular/material/prebuilt-themes/purple-green.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  background: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #303030 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #69f0ae !important;
+}

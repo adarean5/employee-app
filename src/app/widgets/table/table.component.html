@@ -1,18 +1,17 @@
-<table mat-table>
-  <tbody>
-    <mat-header-row>
-      <th *ngFor="let tableHeader of tableHeaders">{{ tableHeader }}</th>
-    </mat-header-row>
+<table mat-table [dataSource]="tableData">
+  <ng-container
+    *ngFor="let tableHeader of tableHeaders; let i = index"
+    matColumnDef="{{ tableHeader }}"
+  >
+    <th mat-header-cell *matHeaderCellDef>{{ tableHeader }}</th>
+    <td mat-cell *matCellDef="let tableRow">{{ tableRow.columns[i] }}</td>
+  </ng-container>
 
-    <mat-row
-      mat-row
-      *ngFor="let tableRow of tableData"
-      [style.background-color]="tableRow.rowColor"
-      (click)="emitId(tableRow.link)"
-    >
-      <td *ngFor="let column of tableRow.columns">
-        {{ column }}
-      </td>
-    </mat-row>
-  </tbody>
+  <tr mat-header-row *matHeaderRowDef="tableHeaders"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: tableHeaders"
+    (click)="emitId(row.link)"
+    [ngClass]="{ 'new-row': row.rowColor != '' }"
+  ></tr>
 </table>

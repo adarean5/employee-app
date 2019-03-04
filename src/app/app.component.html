@@ -1,8 +1,14 @@
-<mat-toolbar>
-  <span>Employee management system {{ currentDate | date }}</span>
-  <div *ngIf="userName != ''">
+<mat-toolbar color="primary">
+  <span
+    >Employee management system
+    <span class="date">{{ currentDate | date }}</span></span
+  >
+  <span class="fill-space"></span>
+  <div *ngIf="userName != ''" id="user-info">
     <span>Welcome {{ userName }}</span>
-    <button mat-button (click)="logOut()">Log out</button>
+    <button mat-button (click)="logOut()" color="accent">
+      Log out
+    </button>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

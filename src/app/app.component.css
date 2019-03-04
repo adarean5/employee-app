@@ -1,0 +1,15 @@
+#userInfo {
+  float: right;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.date {
+  color: #69f0ae;
+}
+
+#user-info > * {
+  margin-left: 1rem;
+}

@@ -6,7 +6,8 @@ import { BackendEmployeesService } from '../../../services/backend-employees.ser
 import { Employee } from 'src/app/models/employee.model';
 import { Router } from '@angular/router';
 
-const RECENT_ROW_COLOR = '#80cbc4';
+const RECENT_ROW_COLOR = '#69f0ae';
+const RECENT_TEXT_COLOR = '#303030';
 
 @Component({
   selector: 'app-employees-overview',
@@ -15,7 +16,13 @@ const RECENT_ROW_COLOR = '#80cbc4';
   providers: [DatePipe, GenderPipePipe]
 })
 export class EmployeesOverviewComponent implements OnInit {
-  public tableHeaders = ['First name', 'Last name', 'Gender', 'Insertion date'];
+  public tableHeaders = [
+    'First name',
+    'Last name',
+    'Insertion date',
+    'Gender',
+    'Role'
+  ];
   public tableData: TableRow[];
 
   constructor(
@@ -36,16 +43,22 @@ export class EmployeesOverviewComponent implements OnInit {
       (response: Employee[]) => {
         console.log(response);
         this.tableData = response.map((employee: Employee) => {
+          console.log(employee.role);
           const tableRow: TableRow = {
             columns: [
               employee.firstName,
               employee.lastName,
               this.datePipe.transform(employee.insertionDate),
-              this.genderPipe.transform(employee.gender)
+              this.genderPipe.transform(employee.gender),
+              employee.role
             ],
             rowColor:
               new Date(employee.insertionDate).getTime() > dateMonthAgo
                 ? RECENT_ROW_COLOR
+                : '',
+            textColor:
+              new Date(employee.insertionDate).getTime() > dateMonthAgo
+                ? RECENT_TEXT_COLOR
                 : '',
             link: String(employee.id)
           };
